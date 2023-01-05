@@ -1,6 +1,13 @@
 import({ "telescope", "project_nvim" }, function(modules)
     local telescope = modules["telescope"]
     local project = modules["project_nvim"]
+    local keymap = vim.keymap.set
+    local opts = { noremap = true, silent = true }
+
+    keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+    keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+    keymap("n", "<leader>fp", "<cmd>lua require('telescope').extensions.projects.projects{}<CR>", opts)
+    keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
     project.setup({
         detection_methods = { "pattern" },

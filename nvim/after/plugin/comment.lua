@@ -3,6 +3,11 @@ import({ "Comment", "Comment.utils", "ts_context_commentstring.utils", "ts_conte
     local utils = modules["Comment.utils"]
     local ts_utils = modules["ts_context_commentstring.utils"]
     local ts_internal = modules["ts_context_commentstring.internal"]
+    local keymap = vim.keymap.set
+    local opts = { noremap = true, silent = true }
+
+    keymap("n", "gcc", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+    keymap("x", "gcc", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
     comment.setup({
         pre_hook = function(ctx)

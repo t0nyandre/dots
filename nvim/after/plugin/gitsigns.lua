@@ -1,5 +1,9 @@
 import("gitsigns", function(gitsigns)
     local icons = require("settings.icons")
+    local keymap = vim.keymap.set
+    local opts = { noremap = true, silent = true }
+
+    keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
     gitsigns.setup({
         signs = {

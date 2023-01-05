@@ -3,6 +3,11 @@ import({ "nvim-tree", "nvim-tree.config" }, function(modules)
     local nvim_tree_config = modules["nvim-tree.config"]
     local tree_cb = nvim_tree_config.nvim_tree_callback
     local icons = require("settings.icons")
+    local keymap = vim.keymap.set
+    local opts = { noremap = true, silent = true }
+
+    keymap("n", "<leader>e", ":NvimTreeFocus<CR>", opts)
+    keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
     local options = {
         filters = {
