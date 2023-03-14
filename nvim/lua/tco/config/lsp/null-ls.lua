@@ -13,7 +13,6 @@ function M.setup()
             "goimports",
             "dotenv_linter",
             "gitsigns",
-            "markdownlint",
             "prettier",
             "shfmt",
             "stylua",
