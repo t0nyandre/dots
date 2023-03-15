@@ -10,7 +10,7 @@ You can find my NeoVim dots [here]("https://github.com/t0nyandre/dots/tree/main/
 
 ![neovim](images/dirty.png)
 
-### :mega: Hold up
+## :mega: Hold up
 
 If you like my work, please consider:
 
