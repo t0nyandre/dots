@@ -5,8 +5,7 @@ function M.setup()
     local mnls = require("mason-null-ls")
 
     mnls.setup({
-        automatic_installation = false,
-        automatic_setup = true,
+        automatic_installation = true,
 
         ensure_installed = {
             "gofumpt",
@@ -18,12 +17,10 @@ function M.setup()
             "stylua",
             "taplo",
             "yamlfmt",
-            "yamllint",
         }
     })
 
     nls.setup()
-    mnls.setup_handlers()
 end
 
 return M

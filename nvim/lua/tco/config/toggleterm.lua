@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
 	require("toggleterm").setup({
-		size = 18,
+		size = 16,
 		open_mapping = [[<c-\>]],
 		shade_filetypes = {},
 		shade_terminals = true,

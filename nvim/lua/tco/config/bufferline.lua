@@ -32,7 +32,7 @@ function M.setup()
       offsets = { -- Apply an offset for sidebar windows
         {
           filetype = "neo-tree",
-          text = "Neo-Tree",
+          text = "",
           highlight = "Directory",
           text_align = "center",
         },

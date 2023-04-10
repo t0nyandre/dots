@@ -39,13 +39,4 @@ return {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()',
   },
-  "gpanders/editorconfig.nvim",
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    config = function()
-      require("tco.config.markdown").setup()
-    end,
-    ft = { "markdown" },
-  },
 }
