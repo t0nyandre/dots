@@ -1,6 +1,6 @@
 local ok, utils = pcall(require, "tco.utils")
 if not ok then
-    return
+  return
 end
 
 vim.g.mapleader = ","

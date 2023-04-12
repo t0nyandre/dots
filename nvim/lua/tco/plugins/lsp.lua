@@ -15,6 +15,7 @@ return {
 					require("tco.config.lsp.signature").setup()
 				end,
 			},
+      { "lukas-reineke/lsp-format.nvim" },
 
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" },
