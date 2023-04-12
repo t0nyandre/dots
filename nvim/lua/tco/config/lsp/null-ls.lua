@@ -9,6 +9,7 @@ function M.setup()
 
         ensure_installed = {
             "gofumpt",
+            "delve",
             "goimports",
             "dotenv_linter",
             "gitsigns",

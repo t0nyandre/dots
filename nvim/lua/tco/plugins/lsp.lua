@@ -3,13 +3,11 @@ return {
 	{ "jayp0521/mason-null-ls.nvim" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v1.x",
+	 "williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
+			{ "williamboman/mason.nvim", },
 			{
 				"ray-x/lsp_signature.nvim",
 				event = "BufReadPre",
@@ -31,7 +29,7 @@ return {
 			{ "rafamadriz/friendly-snippets" },
 		},
 		config = function()
-			require("tco.config.lsp").setup()
+			require("tco.config.lsp")
 		end,
 	},
 }

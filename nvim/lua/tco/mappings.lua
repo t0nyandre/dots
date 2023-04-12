@@ -35,14 +35,10 @@ utils.map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- buffers
 utils.map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 utils.map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-utils.map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-utils.map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-utils.map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+utils.map("n", "<leader>x", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
 -- Clear search with <esc>
 utils.map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
-
-utils.map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 utils.map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
@@ -56,9 +52,6 @@ utils.map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search 
 utils.map("v", "<", "<gv")
 utils.map("v", ">", ">gv")
 
--- lazy
-utils.map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
-
 -- Quit from insert mode
 utils.map("i", "jk", "<ESC>")
 utils.map("i", "<C-C>", "<ESC>")
@@ -66,5 +59,5 @@ utils.map("i", "<C-C>", "<ESC>")
 -- windows
 utils.map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
 utils.map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
-utils.map("n", "<leader>hs", "<C-W>s", { desc = "Split window below" })
-utils.map("n", "<leader>vs", "<C-W>v", { desc = "Split window right" })
+utils.map("n", "<leader>S", "<cmd>split<cr>", { desc = "Split window below" })
+utils.map("n", "<leader>vs", "<cmd>vsplit<cr>", { desc = "Split window right" })
