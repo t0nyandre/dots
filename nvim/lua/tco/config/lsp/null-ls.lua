@@ -1,27 +1,25 @@
 local M = {}
 
 function M.setup()
-    local nls = require("null-ls")
-    local mnls = require("mason-null-ls")
+  local nls = require("null-ls")
+  local mnls = require("mason-null-ls")
 
-    mnls.setup({
-        automatic_installation = true,
+  mnls.setup({
+    automatic_installation = true,
+    ensure_installed = {
+      "gofumpt",
+      "goimports",
+      "dotenv_linter",
+      "gitsigns",
+      "prettier",
+      "shfmt",
+      "stylua",
+      "taplo",
+      "yamlfmt",
+    }
+  })
 
-        ensure_installed = {
-            "gofumpt",
-            "delve",
-            "goimports",
-            "dotenv_linter",
-            "gitsigns",
-            "prettier",
-            "shfmt",
-            "stylua",
-            "taplo",
-            "yamlfmt",
-        }
-    })
-
-    nls.setup()
+  nls.setup()
 end
 
 return M

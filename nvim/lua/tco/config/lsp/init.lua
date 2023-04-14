@@ -17,8 +17,8 @@ mason.setup({
   }
 })
 
-local on_attach = function (client, _)
-  if (utils.has_value({"gopls", "tsserver", "lua_ls"}, client.name)) then
+local on_attach = function(client, _)
+  if (utils.has_value({ "gopls", "tsserver", "lua_ls" }, client.name)) then
     lsp_format.on_attach(client)
   end
 
