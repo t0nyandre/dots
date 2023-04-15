@@ -6,15 +6,16 @@ function M.setup()
 
   mnls.setup({
     automatic_installation = true,
+    automatic_setup = true,
     ensure_installed = {
       "gofumpt",
       "goimports",
       "dotenv_linter",
       "gitsigns",
       "prettier",
+      "eslint",
       "shfmt",
       "stylua",
-      "taplo",
       "yamlfmt",
     }
   })

@@ -6,7 +6,7 @@ function M.setup()
       "bash",
       "css",
       "diff",
-      "comment",
+      "svelte",
       "gitignore",
       "json",
       "lua",

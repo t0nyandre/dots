@@ -45,6 +45,7 @@ local servers = {
   "gopls",
   "tsserver",
   "lua_ls",
+  "svelte",
 }
 
 require("tco.config.lsp.cmp")
