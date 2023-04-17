@@ -80,6 +80,7 @@ return {
   },
   {
     "folke/which-key.nvim",
+    lazy = true,
     config = function()
       require("tco.config.which-key").setup()
     end,

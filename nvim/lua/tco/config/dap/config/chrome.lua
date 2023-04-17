@@ -6,24 +6,21 @@ end
 
 return {
   setup = function(dap)
-    dap.configurations = {
-      chrome = {
+    for _, lang in ipairs({ "typescript", "javascript", "svelte" }) do
+      dap.configurations[lang] = {
         {
-          name = "Chrome: Debug",
-          type = "chrome",
-          request = "attach",
-          program = "${file}",
-          port = 9222,
-          webRoot = "${workspaceFolder}",
-          cwd = vim.fn.getcwd(),
+          type = "pwa-chrome",
+          request = "launch",
+          name = "Launch Chrome",
+          url = "http://localhost:5173",
           sourceMaps = true,
-          protocol = "inspector",
-        },
-      },
-    }
-    dap.adapters.chrome = {
-      type = "executable",
-      command = vim.fn.exepath("chrome-debug-adapter"),
-    }
+          webRoot = "${workspaceFolder}",
+          cwd = "${workspaceFolder}",
+          skipFiles = { "<node_internals>/**", "**/node_modules/**" },
+          runtimeExecutable = "/usr/bin/google-chrome",
+          enableContentValidation = false,
+        }
+      }
+    end
   end
 }

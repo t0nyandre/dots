@@ -1,6 +1,7 @@
 local dap_ok, dap = pcall(require, "dap")
 local dap_ui_ok, dap_ui = pcall(require, "dapui")
-if not (dap_ok and dap_ui_ok) then
+local dap_vscode_ok, dap_vscode = pcall(require, "dap-vscode-js")
+if not (dap_ok and dap_ui_ok and dap_vscode_ok) then
   vim.api.nvim_err_writeln("DAP is not installed")
   return
 end
@@ -8,8 +9,15 @@ end
 local utils = require("tco.utils")
 
 local go_config = require("tco.config.dap.config.go")
+local chrome_config = require("tco.config.dap.config.chrome")
+
+dap_vscode.setup({
+  debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
+  adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
+})
 
 go_config.setup(dap)
+chrome_config.setup(dap)
 
 vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
 
