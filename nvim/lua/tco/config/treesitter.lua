@@ -5,7 +5,6 @@ function M.setup()
     ensure_installed = {
       "bash",
       "css",
-      "svelte",
       "gitignore",
       "json",
       "lua",
