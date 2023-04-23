@@ -1,4 +1,5 @@
 return {
+  { "archibate/lualine-time" },
   {
     "nvim-lualine/lualine.nvim",
     config = function()
