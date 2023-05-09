@@ -53,7 +53,7 @@ require("tco.config.lsp.cmp")
 
 mason_lspconfig.setup({
   ensure_installed = servers,
-  automatic_installation = true,
+  automatic_installation = false,
 })
 
 for _, server_name in ipairs(servers) do

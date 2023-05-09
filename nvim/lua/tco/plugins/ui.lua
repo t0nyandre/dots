@@ -1,11 +1,4 @@
 return {
-  { "archibate/lualine-time" },
-  {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("tco.config.lualine").setup()
-    end,
-  },
   {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = {

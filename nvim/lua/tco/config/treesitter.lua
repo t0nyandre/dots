@@ -14,6 +14,7 @@ function M.setup()
       "typescript",
       "javascript",
       "go",
+      "v",
       "dockerfile",
       "yaml",
     },
