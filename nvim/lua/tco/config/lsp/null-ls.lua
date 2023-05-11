@@ -14,7 +14,6 @@ function M.setup()
       "gitsigns",
       "prettier",
       "eslint",
-      "shfmt",
       "stylua",
       "yamlfmt",
     }
