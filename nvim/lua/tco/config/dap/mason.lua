@@ -7,7 +7,6 @@ end
 mason_nvim_dap.setup({
   ensure_installed = {
     "delve",
-    "chrome",
   },
   automatic_installation = true,
 })

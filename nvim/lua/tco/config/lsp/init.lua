@@ -46,7 +46,6 @@ local servers = {
   "tsserver",
   "lua_ls",
   "emmet_ls",
-  "lemminx",
 }
 
 require("tco.config.lsp.cmp")
