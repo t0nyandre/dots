@@ -20,7 +20,15 @@ function M.setup()
     --           return a.type > b.type
     --       end
     --   end , -- this sorts files and directories descendantly
-    source_selector = { winbar = true, statusline = false },
+    source_selector = {
+      winbar = true,
+      statusline = false,
+      sources = {
+        { source = "filesystem", display_name = icons.ui.Files .. " Files " },
+        { source = "git_status", display_name = icons.git.Git .. " Git " },
+        { source = "buffers",    display_name = icons.ui.Tab .. " Buffers " },
+      }
+    },
     default_component_configs = {
       container = { enable_character_fade = true },
       indent = {

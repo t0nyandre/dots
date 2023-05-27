@@ -1,10 +1,9 @@
 local M = {}
 
 function M.setup()
-  local ok, alpha = pcall(require, "alpha")
-  if not ok then
-    return
-  end
+  local alpha_ok, alpha = pcall(require, "alpha")
+  local icons_ok, icons = pcall(require, "tco.icons")
+  if not (alpha_ok and icons_ok) then return end
 
   local dashboard = require("alpha.themes.dashboard")
 
@@ -27,17 +26,17 @@ function M.setup()
   }
 
   dashboard.section.buttons.val = {
-    dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+    dashboard.button("f", icons.ui.Files .. " " .. " Find file", ":Telescope find_files <CR>"),
     dashboard.button(
-      "n",
-      " " .. " Find projects",
+      "p",
+      icons.ui.Project .. " " .. " Find projects",
       "<cmd>lua require('telescope').extensions.projects.projects{}<CR>"
     ),
-    dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-    dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
-    dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
-    dashboard.button("u", " " .. " Update plugins", ":Lazy update<CR>"),
-    dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+    dashboard.button("r", icons.ui.FindFile .. " " .. " Recent files", ":Telescope oldfiles <CR>"),
+    dashboard.button("g", icons.ui.FindText .. " " .. " Find text", ":Telescope live_grep <CR>"),
+    dashboard.button("c", icons.ui.Gear .. " " .. " Config", ":e $MYVIMRC <CR>"),
+    dashboard.button("u", icons.ui.Update .. " " .. " Update plugins", ":Lazy update<CR>"),
+    dashboard.button("q", icons.ui.SignOut .. " " .. " Quit", ":qa<CR>"),
   }
 
   dashboard.section.footer.opts.hl = "Type"

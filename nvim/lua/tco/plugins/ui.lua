@@ -79,14 +79,4 @@ return {
       require("tco.config.which-key").setup()
     end,
   },
-  {
-    "akinsho/bufferline.nvim",
-    event = "VimEnter",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("tco.config.bufferline").setup()
-    end,
-  },
 }

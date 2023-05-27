@@ -35,7 +35,6 @@ utils.map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- buffers
 utils.map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 utils.map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-utils.map("n", "<leader>x", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
 -- Clear search with <esc>
 utils.map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -54,10 +53,10 @@ utils.map("v", ">", ">gv")
 
 -- Quit from insert mode
 utils.map("i", "jk", "<ESC>")
-utils.map("i", "<C-C>", "<ESC>")
+utils.map("i", "<C-c>", "<ESC>")
 
 -- windows
 utils.map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
 utils.map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
 utils.map("n", "<leader>S", "<cmd>split<cr>", { desc = "Split window below" })
-utils.map("n", "<leader>vs", "<cmd>vsplit<cr>", { desc = "Split window right" })
+utils.map("n", "<leader>s", "<cmd>vsplit<cr>", { desc = "Split window right" })
