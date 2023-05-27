@@ -6,12 +6,13 @@ if not (dap_ok and dap_ui_ok) then
 end
 
 local utils = require("tco.utils")
+local icons = require("tco.icons")
 
 local go_config = require("tco.config.dap.config.go")
 
 go_config.setup(dap)
 
-vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
+vim.fn.sign_define('DapBreakpoint', { text = icons.ui.Circle .. " " })
 
 -- Start debugging session
 utils.map("n", "<leader>ds", function()
@@ -43,8 +44,8 @@ end)
 
 dap_ui.setup({
   icons = {
-    expanded = "▾",
-    collapsed = "▸",
+    expanded = icons.ui.TriangleShortArrowDown,
+    collapsed = icons.ui.TriangleShortArrowRight,
   },
   mappings = {
     -- Use a table to apply multiple mappings
