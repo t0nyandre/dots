@@ -1,0 +1,101 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+set ignorecase
+set smartcase
+set wrapscan
+
+set relativenumber
+set number
+
+set clipboard=unnamedplus,unnamed,ideaput
+
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+
+set ideajoin
+set idearefactormode=keep
+
+let mapleader = " "
+
+
+" edit ideavim config
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
+
+map <C-c> <ESC>
+map Y y$
+
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" splits
+nnoremap <leader>sv :action SplitVertically<CR>
+nnoremap <leader>sh :action SplitHorizontally<CR>
+nnoremap <leader>sq :action Unsplit<CR>
+nnoremap <leader>sm :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+nnoremap <s-q> :action CloseContent<CR>
+
+nmap + :action EditorIncreaseFontSize<CR>
+nmap - :action EditorDecreaseFontSize<CR>
+nmap <leader>= :action EditorResetFontSize<CR>
+
+nmap L :action NextTab<CR>
+nmap H :action PreviousTab<CR>
+
+nnoremap <leader>fe :action GotoFile<CR>
+nnoremap <leader>lf :action ReformatCode<CR>
+nnoremap <leader>/ :action FindInPath<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gr :action GotoRelated<CR>
+
+nnoremap <C-S-n> :action HideAllWindows<CR>
+nnoremap <C-n> :action Macro.ActivateProjectsW<CR>
+
+nnoremap ]e :action GotoNextError<CR>
+nnoremap [e :action GotoPreviousError<CR>
+
+Plug 'vim-matchit'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+
+"" Map <leader>d to start debug
+"map ,>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
