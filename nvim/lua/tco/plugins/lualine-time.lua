@@ -1,3 +1,0 @@
-return {
-  "archibate/lualine-time"
-}
